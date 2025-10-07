@@ -44,6 +44,6 @@ React 19, TypeScript (strict mode), CSS Modules, Vitest + React Testing Library,
 
 ## Notes
 
-Focused on getting the core functionality and accessibility right rather than adding features that weren't asked for. The component's designed to work in a Design System context - clean API, fully typed, well tested.
+Focused on getting the core functionality and accessibility right rather than adding features that weren't asked for. The component's designed to work in a Design System context - clean API and well tested.
 
 CSS written from scratch using the Figma specs. Kept colour variables for easy theming but all spacing and typography values are inline to avoid looking framework-generated.
