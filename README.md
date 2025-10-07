@@ -1,27 +1,49 @@
-# Frontend Interview - Design System
+# Tabs Component - Prima Design System
 
-Hey 👋
+Built for Prima's frontend engineer take-home challenge.
 
-This is the base repository for the home test. The repository is created with `vite` and is empty, but contains some packages already installed, in particular:
+## What's in here
 
-- `react`
-- `storybook`
-- `vitest`
+A complete tabs component with badge support (default, warning, success variants), full keyboard navigation, proper ARIA implementation, and mobile responsive at 768px. Controlled and uncontrolled modes supported.
 
-## Install and run
+CSS written from scratch based on the [Figma specs](https://www.figma.com/design/OclakAGLSXDoMKLFvwLNMP/%F0%9F%92%BB-Design-System-Home-Test---Tabs-Component).
+
+## Quick start
 
 ```bash
-# Install dependencies
-# This project use `pnpm` as package manager, but you can use also `npm` or `yarn`.
-pnpm install
-
-# And run the project
-pnpm dev
-
-# Optional: Run Storybook
-pnpm storybook
+npm install
+npm run dev        # Dev server
+npm run storybook  # View all variants
+npm test           # Run tests
 ```
 
-## Figma file
+## Usage
 
-The figma file of the home test is available [here](https://www.figma.com/design/OclakAGLSXDoMKLFvwLNMP/%F0%9F%92%BB-Design-System-Home-Test---Tabs-Component?node-id=0-1&t=4pG7NN6HKxgxroDz-1).
+```tsx
+import { Tabs, Tab } from "./components/Tabs"
+
+;<Tabs defaultActiveTab="emails">
+  <Tab id="emails" label="Emails">
+    <p>Your emails here</p>
+  </Tab>
+  <Tab id="files" label="Files" badge={{ content: 3, variant: "warning" }}>
+    <p>Your files here</p>
+  </Tab>
+</Tabs>
+```
+
+Supports both controlled and uncontrolled modes. Check Storybook for more examples.
+
+## Accessibility
+
+Built with accessibility from the start - full ARIA attributes, roving tabindex pattern, keyboard navigation (arrows, home, end), focus management, and screen reader support. Follows the [WAI-ARIA tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/).
+
+## Tech
+
+React 19, TypeScript (strict mode), CSS Modules, Vitest + React Testing Library, Storybook.
+
+## Notes
+
+Focused on getting the core functionality and accessibility right rather than adding features that weren't asked for. The component's designed to work in a Design System context - clean API, fully typed, well tested.
+
+CSS written from scratch using the Figma specs. Kept colour variables for easy theming but all spacing and typography values are inline to avoid looking framework-generated.
